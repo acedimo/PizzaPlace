@@ -13,5 +13,18 @@ namespace PizzaPlace.Mappings
               ValidTo = entity.ValidTo 
             };
         }
+
+        public static MenuItemViewModel ToViewModel(this MenuItem entity)
+        {
+            return new MenuItemViewModel()
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                ImageUrl = entity.ImageUrl,
+                Description = entity.Description,
+                Price = entity.Price,
+                Currency = entity.Currency
+            };
+        }
     }
 }
