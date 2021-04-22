@@ -10,6 +10,7 @@ namespace PizzaPlace.Repositories
 
         public DbSet<Offer> Offers { get; set; }
         public DbSet<MenuItem> MenuItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
     }
 }
