@@ -33,12 +33,14 @@ namespace PizzaPlace
             services.AddTransient<IOfferService, OfferService>();
             services.AddTransient<IMenuItemService, MenuItemService>();
             services.AddTransient<IOrderService, OrderService>();
-
+            services.AddTransient<ISubscriptionService, SubscriptionService>();
 
             services.AddTransient<IOfferRepository, OfferRepository>();
             services.AddTransient<IMenuItemRepository, MenuItemRepository>();
             services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<ISubscriptionRepository, SubscriptionRepository>();
 
+            
 
         }
 
