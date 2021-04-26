@@ -7,7 +7,7 @@ namespace PizzaPlace.Mappings
     {
         public static OfferViewModel ToViewModel(this Offer entity)
         {
-            return new OfferViewModel() 
+            return new OfferViewModel 
             { Title = entity.Title,
               Description = entity.Description, 
               ValidTo = entity.ValidTo 
@@ -16,7 +16,7 @@ namespace PizzaPlace.Mappings
 
         public static MenuItemViewModel ToViewModel(this MenuItem entity)
         {
-            return new MenuItemViewModel()
+            return new MenuItemViewModel
             {
                 Id = entity.Id,
                 Name = entity.Name,
@@ -25,6 +25,20 @@ namespace PizzaPlace.Mappings
                 Price = entity.Price,
                 Currency = entity.Currency,
                 Slug = entity.Slug
+            };
+        }
+
+        public static OrdersListViewModel ToOrderListViewModel(this Order entity)
+        {
+            return new OrdersListViewModel
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Surname = entity.Surname,
+                Address = entity.Address,
+                Phone = entity.Phone,
+                Message = entity.Message,
+                Status = entity.Status
             };
         }
     }
