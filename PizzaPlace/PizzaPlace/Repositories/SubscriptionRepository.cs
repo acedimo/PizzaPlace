@@ -1,9 +1,6 @@
 ﻿using PizzaPlace.Models;
 using PizzaPlace.Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace PizzaPlace.Repositories
 {
@@ -19,6 +16,11 @@ namespace PizzaPlace.Repositories
         {
             dbContext.Subscriptions.Add(newSubscription);
             dbContext.SaveChanges();
+        }
+
+        public Subscription GetByEmail(string email)
+        {
+            return dbContext.Subscriptions.FirstOrDefault(x => x.Email.ToLower() == email.ToLower());
         }
     }
 }

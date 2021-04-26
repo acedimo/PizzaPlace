@@ -16,13 +16,19 @@ namespace PizzaPlace.Services
 
         public void Create(string email)
         {
-            var newSubscription = new Subscription()
-            {
-                Email = email,
-                DateCreated = DateTime.Now
-            };
+            var existingEmail = subscriptionRepository.GetByEmail(email);
 
-            subscriptionRepository.Add(newSubscription);
+            if (existingEmail == null)
+            {
+                var newSubscription = new Subscription()
+                {
+                    Email = email,
+                    DateCreated = DateTime.Now
+                };
+
+                subscriptionRepository.Add(newSubscription);
+            }
+            
         }
     }
 }
