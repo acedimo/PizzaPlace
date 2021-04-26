@@ -26,5 +26,8 @@ namespace PizzaPlace.Models
 
         [Required]
         public DateTime DateCreated { get; set; }
+
+        [Required]
+        public string Slug { get; set; }
     }
 }

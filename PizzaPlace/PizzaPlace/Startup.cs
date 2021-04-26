@@ -28,7 +28,10 @@ namespace PizzaPlace
                 options.UseSqlServer(Configuration.GetConnectionString("PizzaPlaceDb"));           
             });
 
-            services.AddRazorPages();
+            services.AddRazorPages().AddRazorPagesOptions(options => {
+
+                options.Conventions.AddPageRoute("/Home", "");
+            });
 
             services.AddTransient<IOfferService, OfferService>();
             services.AddTransient<IMenuItemService, MenuItemService>();
